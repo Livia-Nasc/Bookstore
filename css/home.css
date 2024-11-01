@@ -1,0 +1,113 @@
+:root{
+    --cor_de_fundo: #d7d7d785;
+    --rascunho: #eaeaea;
+    --cor_do_rodape: #c12387;
+    --nome_autores: #6D6A6A;
+    --tipo_capa: #0993D8;
+}
+
+body{
+    margin: 0;
+    /* overflow-x: hidden !important; */
+}
+
+main{
+    width: 100vw;
+    /* height:100vh; */ /*! teste para saber o que tá dando rolagem*/
+    padding: 15px;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+}
+
+.livros{
+    min-width: 391px;
+    max-height: 436px;
+    border-radius: 24px;
+    background-color: rgba(101, 100, 100, 0.199);
+    margin-left: 15px;
+    margin-bottom: 15px;
+    padding: 15px 25px 15px 25px;
+}
+
+.primeiraFileira{
+    display: flex;
+    overflow-x: scroll;
+    
+}
+
+.sentralizar{
+    /* width: 100%; */ /*! teste*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: rgba(0, 0, 0, 0.156) ; */
+
+
+}
+
+.img-livro{
+    /* width: 250px; */ /*! teste*/
+    height: 300px;
+    background-color: black ;
+}
+
+.descricao, .valores, .parcelamento{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    /* background-color: rgba(255, 255, 0, 0.319); */
+}
+
+.autores, .Tcapa, .parcelamento{
+    font-size: 11px;
+}
+
+.autores, .parcelamento{
+    color: var(--nome_autores);
+}
+
+.Tcapa{
+    color: var(--tipo_capa);
+}
+
+.valores{
+    /* width: 100%; *//*! teste*/
+    height: 30px;
+    /* background-color: red; */
+}
+
+.desconto{
+    /* width: 100%; */ /*! teste*/
+    display: flex;
+    flex-direction: row ;
+    
+}
+
+.por, .vreal{
+    font-size: 11px;
+}
+
+.moeda{
+    font-size: 9px;
+    margin-top: 4px;
+}
+
+.vcdesconto{
+    font-size: 24px;
+    margin-left: 2.5px;
+}
+
+.vreal{
+    text-decoration: line-through;
+    margin-left: 2px;
+}
+
+.por{
+    margin-left: 3px;
+}
+
+.por, .vreal{
+    margin-top: 15px;
+}

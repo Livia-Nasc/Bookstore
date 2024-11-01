@@ -1,0 +1,201 @@
+/* ? Todas as paginas deste site devem receber um link desse arquivo CSS, nele estão contidas estilos indispnesaveis, possiveis autoreações podem ser feitas com outros arquivos */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    /* ? Variaveis com as imagem do site (a palheta de cor ainda será votada!) */
+    --cor_de_fundo: #d7d7d755;
+    --rascunho: #eaeaea;
+    --cor_do_rodape: #c12387;
+    --cor_de_fundo_original: #fbb1e0;
+    --cor_do_rodape_original: #FFCBEC;
+}
+
+*{
+    /* ? Estilos gerais do site */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+::-webkit-scrollbar{
+    /* ? Estilo do trilho da barra de rolagem */
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-thumb{
+    /* ? Estilo da barra de rolagem */
+    widows: 5px;
+    height: 2px;
+    border-radius: 30px;
+    background-color: pink;
+}
+
+body{
+    /* ? Estilo geral do body */
+    background-color: var(--cor_de_fundo);
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden; /* ? Usado para bloquear a rolagem lateral do body */
+}
+
+.topo{
+    /* ? Estilo geral do topo */
+    width: 100vw;
+    height: 60px;
+    background-color: var(--cor_do_rodape);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 100px;
+}
+
+.logo-img img{
+    /* ? tamanho da imagem da logo */
+    width: 50px;
+    height: 50px;
+}
+
+.logo-texto{
+    /* ? tamanho da fonte */
+    font-size: 24px;
+}
+
+.logo-e-titulo {
+    /* ? deixando tudo um do lado do outro */
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: 0;  
+}
+
+.logo-e-titulo img {
+    margin: 0 20px;  
+}
+
+.menu li{
+    display: inline-block;
+    margin-left: 20px;
+    
+}
+
+.menu li a{
+    text-decoration: none;
+    color: #0000007d;
+    font-size: 14px;
+    padding: 10px 15px; /*? para deixar a area de contato maior*/
+}
+
+.menu li a:hover{
+    color: #000;
+}
+
+/* ? Mennu mobile */
+.menu-mobile{
+    background-color: #0000008c;
+    backdrop-filter: blur(10px); /* ? deixa com um efeito de vidro*/
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    /* display: none; */
+}
+
+main{
+    text-align: center;
+    align-items: center;
+    /* background-color: var(--cor_de_fundo); */
+}
+
+main .apresentacao{
+    font-size: 45px;
+    margin-top: 25px ;
+}
+
+main .apresentacao2{
+    font-size: 30px;
+}
+
+main .infor{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    margin-top: 25px;
+}
+
+.infor2, .infor3{
+    width: 450px;
+    /* height: 500px; */
+    background-color: var(--cor_do_rodape);
+    font-size: 25px;
+    text-align: center;
+    align-items: center;
+    border-radius: 20px;
+    justify-content: space-around;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.523);
+    padding: 8px;
+    margin-bottom: 25px;
+}
+
+.texto{
+    font-size: 20px;
+}
+
+@media screen and (max-width: 1024px){
+    /* ! Cabeçalho */
+    .logo-e-titulo {
+        /* ? deixando tudo um do lado do outro */
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        margin: 0;  
+        /* width: 500px; */
+        /* background-color: rgba(0, 0, 0, 0.13); */
+    }
+    
+    .logo-texto{
+        /* ? tamanho da fonte */
+        font-size: 14px;
+    }
+    
+    .menu{
+        display: none;
+    }
+
+    main .apresentacao{
+        font-size: 24px;
+        margin-top: 25px ;
+    }
+    
+    main .apresentacao2{
+        font-size: 20px;
+    }
+ 
+    /* ! Responsividade da apresetação. */
+    main .infor{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 25px;
+    }
+
+    .infor2, .infor3{
+        width: 350px;
+        /* height: 500px; */
+        background-color: var(--cor_do_rodape);
+        font-size: 14px;
+        text-align: center;
+        align-items: center;
+        border-radius: 20px;
+        justify-content: space-around;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.523);
+        padding: 8px;
+        margin-bottom: 25px;
+    }
+}

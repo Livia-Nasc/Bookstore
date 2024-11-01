@@ -1,0 +1,55 @@
+/* ? Esse arquivo traz algumas auterações para o topo da pagina por conta do campo de pesquisa. */
+
+.topo{
+    width: 100vw;
+    height: 60px;
+    background-color: var(--cor_do_rodape);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
+    /* border-radius: 0 0 20px 20px; */
+
+}
+
+.lupa{
+    /* ? CSS da imagem da lupa para determinar sua autura e largura */
+    width: 20px;
+    height: 20px;
+}
+
+.pesquisa{
+    /* ? Section que vai onde fica o input e a imagem da lupa */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #eadee6;
+    border: 1px solid #e11ab0;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+.pes{
+    /* ? Estilo do input */
+    width: 230px;
+    height: 24px;
+    outline: none;
+    border: none;
+    background: none;
+    color: black;
+}
+
+.block{
+    /* ? section para deixar tudo no seu devido lugar e em linha */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#carrinho{
+    /* ? CSS para determinar a o tamanho da imagem do carrinho */
+    width: 30px;
+    height: 30px;
+    margin-left: 40px;
+}

@@ -1,0 +1,100 @@
+:root{
+    --cor_de_fundo: #d7d7d785;
+    --rascunho: #eaeaea;
+    --cor_do_rodape: #c12387;
+}
+
+/* body{
+    background-color: var(--cor_de_fundo);
+} */
+
+.formulario{
+    display: grid;
+    place-items: center;
+    /* background-color: var(--cor_de_fundo); */
+}
+
+.titulo{
+    background-color: var(--cor_do_rodape);
+    width: 200px;
+    position: absolute;
+    border-radius: 15px;
+    font-size: 20px;
+    top: 75px;
+    
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    /* height: 260px; */
+    width: 360px;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 35px;
+    background-color: white;
+    font-size: 30px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.523);
+}
+
+/* form button{
+    position: absolute;
+    top: 290px;
+    right: 560px;
+} */
+
+.primeiro{
+    margin-top: 20px;
+}
+
+form label{
+    font-size: 28px;
+}
+
+input{
+    width: 320px;
+    height: 30px;
+    border: 1.5px solid pink;
+    border-radius: 10px;
+    padding: 0px 0 0 3px;
+}
+
+label input{
+    border-bottom: 5px;
+}
+
+
+
+.redefinir{
+    font-size: 10px;
+    margin-top: 0;
+    margin-left: 5px;
+}
+
+.redefinir a{
+    text-decoration: none;
+    color: var(--cor_do_rodape);
+}
+
+.redefinir a:hover{
+    text-decoration: underline;
+}
+
+.button{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    /* background-color: black; */
+    padding: 10px;
+}
+
+button{
+    background-color: white;
+    width: 150px;
+    height: 30px;
+    border: 1.5px solid pink;
+    border-radius: 25px;
+}
