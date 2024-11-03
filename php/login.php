@@ -1,13 +1,14 @@
 <?php
 require_once('conexao.php');
-        // Obter a conexão PDO
+        // Obtém a conexão PDO
         $conn = getConexao();
-
-        // Escapar os valores recebidos do formulário
+        // Inicia uma sessão
+        session_start();
+        // Registra os valores recebidos do formulário
         $usuario = $_POST['usuario'];
         $senha = $_POST['senha'];
 
-        // Preparar e executar a consulta SQL
+        // Prepara e executa a consulta SQL
         $sql = "SELECT * FROM user WHERE usuario = :usuario AND senha = :senha";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':usuario', $usuario);
@@ -15,17 +16,20 @@ require_once('conexao.php');
 
         $stmt->execute();
 
-        // Verificar se existe algum registro retornado
+        // Verifica se existe algum registro retornado
         if ($stmt->rowCount() == 1) {
-            $usuario = $stmt->fetch();
+            $usuarioData = $stmt->fetch();
+            $_SESSION['usuario'] = $usuario;
+            $_SESSION['senha'] = $senha;
+            $_SESSION['admin'] = $usuarioData['admin'];
 
-            header("Location: ../home.html");
+            header("Location: ../home.php");
             exit;
         } else {
             echo "<script type='text/javascript'>
-        window.location='http://localhost/livia/Bookstore/entrar.html';
-        alert('Usuário ou senha incorreto');
-        </script>";;
+                window.location='http://localhost/livia/Bookstore/entrar.php';
+                alert('Usuário ou senha incorreto');
+            </script>";
         }
     
 

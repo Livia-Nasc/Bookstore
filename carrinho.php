@@ -13,7 +13,7 @@
 </head>
 <body>
     <header class="topo">
-        <section class="logo-e-titulo">
+        <section class="logo-e-t itulo">
             <section>
                 <h3 class="logo-texto">Bookstore Online</h3>
             </section>  

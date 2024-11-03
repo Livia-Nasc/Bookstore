@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    if((!isset ($_SESSION['usuario']) == true) and (!isset ($_SESSION['senha']) == true))
+    {
+        header('location:entrar.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -33,7 +41,7 @@
             </section>
             <section class="carrinho">
                 <!-- ? Carrinho que levara o usuário ao seu carrinho, onde irá mostrar os produtos que ele adicionou -->
-                <img src="img/carrinho.png" alt="carrinho de compras" id="carrinho" onclick="carrinho()">
+                <a href="carrinho.php"><img src="img/carrinho.png" alt="carrinho de compras" id="carrinho" ></a>
             </section>
         </section>
     </header>
@@ -299,5 +307,8 @@
             </section>
         </section>
     </main>
+    <form action="php/sair.php" method="post">
+        <button>Sair</button>
+    </form>
 </body>
 </html>
