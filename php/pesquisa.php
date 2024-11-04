@@ -10,11 +10,10 @@
     $admin = $_SESSION['admin'];
 
 
-    // Prepara e executa a consulta SQL
+    // Preparar e executar a consulta SQL
     $sql = "SELECT * FROM user WHERE usuario = :usuario";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':usuario', $usuario);
-    $stmt->bindParam(':admin', $admin);
     $stmt->execute();
     $pesquisa = $_POST["pesquisa"];
     $livros = "admin/livro";
@@ -28,6 +27,9 @@
                 header("Location: ../cadastrar-autor.php");
                 exit;
             }
+        }
+        else{
+            echo "Não é admin";
         }
     }
     else{
