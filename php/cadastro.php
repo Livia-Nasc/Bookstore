@@ -19,7 +19,7 @@
         if ($stmt->execute()){                              
             /* Ao cadastrar com sucessor irá ser redirecionado para a página de login e mostrará um alert confirmando a cadastração do usuário  */
             echo "<script type='text/javascript'>
-                window.location='http://localhost/livia/Bookstore/entrar.html';
+                window.location='../entrar.php';
                 alert('Usuário cadastrado');
             </script>";
             
@@ -29,7 +29,7 @@
     }
     else{
         echo "<script type='text/javascript'>
-        window.location='http://localhost/livia/Bookstore/cadastrar.html';
+        window.location='../cadastrar.php';
         alert('Senhas não coincidem');
         </script>";
     }

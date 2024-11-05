@@ -27,7 +27,7 @@ require_once('conexao.php');
             exit;
         } else {
             echo "<script type='text/javascript'>
-                window.location='http://localhost/livia/Bookstore/entrar.php';
+                window.location='../entrar.php';
                 alert('Usuário ou senha incorreto');
             </script>";
         }

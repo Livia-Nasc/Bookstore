@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -20,31 +24,42 @@
             </section>  
         </section>
         <section class="block">
-            <section class="pesquisa">
-                <input type="text" class="pes" placeholder="Pesquise na BookStore Online">
-                <a href="#">
-                    <img src="img/lupa.png" alt="Lupa" class="lupa">
-                </a>
-            </section>
+            <form action="php/pesquisa.php" method="post">
+                <section class="pesquisa">
+                    <input type="text" class="pes" placeholder="Pesquise na BookStore Online" required name = "pesquisa">
+                    <a href="#">
+                        <img src="img/lupa.png" alt="Lupa" class="lupa">
+                    </a>
+                </section>
+            </form> 
             <section class="carrinho">
                 <img src="img/carrinho.png" alt="carrinho de compras" id="carrinho" onclick="carrinho()">
             </section>
         </section>
     </header>
+    
     <main>
+    <?php
+    $nomeLivro = $_SESSION['nomeLivro'];
+    $lancamentoLivro = $_SESSION['lancamentoLivro'];
+    $descricaoLivro = $_SESSION['descricaoLivro'];
+    for ($i = 0; $i < count($nomeLivro); $i++) {
+        ?>
         <section class="produto">
             <section class="disponibilidade">
                 <p>Disponível no estoque</p>
             </section>
             <section class="informes">
                 <section class="capa-livro">
-                    <img src="img/todas-as-cartas.png" alt="">
+                    <img src="img/<?php echo $nomeLivro[$i]; ?>" alt="">
                 </section>
                 <section class="sonopse">
-                    <h1>Todas as Cartas: Edição ampliada</h1>
-                    <p class="autores">Clarisse Lispector (2020)</p>
+                    <h1>
+                        <?php echo $nomeLivro[$i]; ?>
+                    </h1>
+                    <p class="autores">Clarisse Lispector <spam><?php echo $lancamentoLivro[$i];?></spam></p>
                     <hr>
-                    <p>Reúne correspondências escritas por Clarice Lispector ao longo de sua vida, entre os anos 1940 e 1970. A obra é considerada fundamental para compreender a trajetória literária da escritora, e conta com cerca de metade de cartas inéditas.</p>
+                    <p><?php echo $descricaoLivro[$i];?></p>
                 </section>
             </section>
             <section class="button">
@@ -52,6 +67,10 @@
                 <button onclick="Entrar()" returne="false">Adicionar ao carrinho</button>
             </section>
         </section>
+    <?php
+    }
+        ?>
     </main>
+    
 </body>
 </html>
