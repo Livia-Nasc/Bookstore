@@ -1,7 +1,9 @@
 :root{
-    --cor_de_fundo: #d7d7d785;
+    --cor_do_fundo: #c12387;
+    --cor_de_fundo0: #d7d7d785;
     --rascunho: #eaeaea;
     --cor_do_rodape: #c12387;
+    --cor_do_footer: #c12387b2;
     --nome_autores: #6D6A6A;
     --tipo_capa: #0993D8;
 }
@@ -13,16 +15,17 @@ body{
 
 main{
     width: 100vw;
-    /* height:100vh; */ /*! teste para saber o que tá dando rolagem*/
+    height:100vh;  /*! teste para saber o que tá dando rolagem*/
     padding: 15px;
-    /* display: flex;
+    display: flex;
     flex-direction: column;
-    justify-content: center; */
+    align-items: center;
 }
 
 .livros{
-    min-width: 391px;
-    max-height: 436px;
+    width: 391px;
+    max-width: 391px;
+    height: 436px;
     border-radius: 24px;
     background-color: rgba(101, 100, 100, 0.199);
     margin-left: 15px;
@@ -30,25 +33,30 @@ main{
     padding: 15px 25px 15px 25px;
 }
 
-.primeiraFileira{
+.Fileira{
     display: flex;
-    overflow-x: scroll;
-    
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .sentralizar{
-    /* width: 100%; */ /*! teste*/
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-color: rgba(0, 0, 0, 0.156) ; */
 
 
 }
 
-.img-livro{
-    /* width: 250px; */ /*! teste*/
+.img-livro {
     height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.img-livro img{
+    height: 300px;
+    width: 200px;
     background-color: black ;
 }
 
@@ -57,7 +65,6 @@ main{
     flex-direction: column;
     align-items: start;
     width: 100%;
-    /* background-color: rgba(255, 255, 0, 0.319); */
 }
 
 .autores, .Tcapa, .parcelamento{
@@ -73,13 +80,10 @@ main{
 }
 
 .valores{
-    /* width: 100%; *//*! teste*/
     height: 30px;
-    /* background-color: red; */
 }
 
 .desconto{
-    /* width: 100%; */ /*! teste*/
     display: flex;
     flex-direction: row ;
     
@@ -110,4 +114,131 @@ main{
 
 .por, .vreal{
     margin-top: 15px;
+}
+
+footer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    /* height: 100%; */
+    color: black;
+    background-color: var(--cor_do_footer);
+    margin-top: 25%;
+    align-items: center;
+}
+
+#desenvolvedor, #designer, #documentação{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    color: black;
+    /* height: 100%; */
+    /* background-color: blue; */
+}
+
+#desenvolvedor, #designer, #documentação, ul{
+    color: black;
+    list-style: none;
+    margin-top: 0;
+    margin-left: 10px;
+    margin-bottom: 0;
+    padding-left: 0;
+    font-size: 20pt;
+    height: 100%;
+    width: 100%;
+    /* background-color: #6d6a6a3a; */
+}
+
+#desenvolvedor, #designer, #documentação, ul, .nome{
+    font-size: 10pt;
+}
+
+#desenvolvedor, #designer, #documentação, li, a{
+    gap: 1;
+    font-size: 8pt;
+    padding: 5px;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+@media screen and (max-width: 1024px){
+    body{
+        overflow-x: hidden;
+    }
+
+    main{
+        height: calc(100vh + 100px);
+    }
+
+    .topo{
+        position: relative;
+        z-index: 1;
+        margin-bottom: 960px;
+        
+    }
+
+    .logo-texto, h3{
+        font-size: 12pt;
+    }  
+
+    .logo-img{
+        display: none;
+    }
+
+    .pesquisa{
+        /* ? Section que vai onde fica o input e a imagem da lupa */
+        padding: 5px;
+        border-radius: 25px;
+        width: 220px;
+        height: 50px;
+        margin-left: 10;
+        margin-right: 0;
+    }
+
+    .Fileira{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-left: 20px;
+        width: 100vw;
+        padding: 0;
+        /* background-color: black; */
+    }
+
+    .livros{
+        min-width: 350px;
+        margin:0 20px 10px 20px;
+        padding: 15px 15px 15px 15px;
+        /* background-color: black; */
+    }
+
+    main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer{
+        margin-top: 920px;
+    }
+
+    #desenvolvedor, #designer, #documentação, ul, .nome{
+        font-size: 8pt;
+    }
+    
+    #desenvolvedor, #designer, #documentação, li, a{
+        gap: 1;
+        font-size: 5pt;
+        padding: 5px;
+        color: black;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
 }

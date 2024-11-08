@@ -1,10 +1,9 @@
 <?php
+
+function pesquisar(){
+    
+}
     session_start();
-    if(isset ($_SESSION['nomeLivro']) == true){
-        unset ($_SESSION['nomeLivro']);
-        unset ($_SESSION['lancamentoLivro']);
-        unset ($_SESSION['descricaoLivro']);
-    }
     
     require_once("conexao.php");
     $conn = getConexao();
@@ -36,22 +35,34 @@
             
         }
         else{
-            $query = "SELECT * FROM livros WHERE nome like '%$nome%'";
+            $query = "SELECT l.nome AS titulo,l.id_livros,l.lancamento,l.descricao,a.nome AS autor FROM livros as l
+            JOIN autores as a
+            ON l.id_autores = a.id_autores 
+            WHERE l.nome like '%$nome%'
+            ORDER BY l.nome";
             $stmt = $conn->prepare($query);
             $stmt->execute();
             $result = $stmt->fetchAll();
+            
             if($result){
+                unset ($_SESSION['Titulo']);
+                unset ($_SESSION['Lancamento']);
+                unset ($_SESSION['Descricao']);
+                unset ($_SESSION['Autor']);
+                unset ($_SESSION['id_livro']);
                 foreach ($result as $value){
-                    $_SESSION['nomeLivro'][] = $value['nome'];     
-                    $_SESSION['lancamentoLivro'][] = $value['lancamento'];                         
-                    $_SESSION['descricaoLivro'][] = $value['descricao'];                         
+                    $_SESSION['Titulo'][] = $value['titulo'];     
+                    $_SESSION['id_livro'][] = $value['id_livros'];     
+                    $_SESSION['Lancamento'][] = $value['lancamento'];                         
+                    $_SESSION['Descricao'][] = $value['descricao'];                         
+                    $_SESSION['Autor'][] = $value['autor'];                  
                 }
-                header("Location: ../descricao-produto.php");
+                header("Location: ../home.php");
                 exit;
             }else{
-                echo "Livro não encontrado";
+                header("Location: ../home.php");
+                exit;
             }
-
         }
     }
     else{

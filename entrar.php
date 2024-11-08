@@ -14,7 +14,7 @@
     <title>Bookstore Online</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/entrar.css">
-    <script src="js/funcoes.js"></script>
+    <script src="js/menu-animado.js"></script>
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
 </head>
 <body>
@@ -36,6 +36,20 @@
                     <li><a href="cadastrar.php">Cadastrar-se</a></li>
                     <li><a href="entrar.php">Entrar</a></li>
                 </ul>
+
+                <button class="btn" onclick="BtnAnimado()">
+                    <span class="linha"></span>
+                    <span class="linha"></span>
+                    <span class="linha"></span>
+                </button>
+
+                <section class="menu-mobile" id="menu-mobile" onclick="BtnAnimado()">
+                    <ul>
+                        <li><a href="index.php">Inicio</a></li>
+                        <li><a href="cadastrar.php">Cadastrar-se</a></li>
+                        <li><a href="entrar.php">Entrar</a></li>
+                    </ul>
+                </section>
             </nav>
         </section>
     </header>
@@ -47,12 +61,12 @@
             <form action="php/login.php" method="post">
                 <!-- ? Formulario para o usuário já cadastrado poder voltar para o site -->
                 <label for="" class="primeiro">Usuário</label>
-                <input type="text" placeholder="Digite seu usuário" name="usuario" class="user" required name = "usuario">
+                <input type="text" placeholder="Digite seu usuário" name="usuario" class="user" required>
                 <label for="">Senha:</label>
-                <input type="password" placeholder="Digite sua senha" class="place" required name = "senha">
+                <input type="password" placeholder="Digite sua senha" class="place" name = "senha" required>
                 
                 
-                <p class="redefinir"><a href="">Esqueceu sua senha?</a></p>
+                <p class="redefinir"><a href="mudar-senha.html">Esqueceu sua senha?</a></p>
                 <section class="button">
                     <!-- ? Botão que levara a pagina principal -->
                     <button onclick="Entrar()" returne="false">entrar</button>

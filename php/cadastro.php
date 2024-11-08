@@ -9,12 +9,13 @@
     $senha_confirm = $_POST["senha_confirm"];
 
     if($senha == $senha_confirm){
+        $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
         $sql = 'INSERT INTO user(usuario, email, data, senha) VALUES (:usuario, :email, :data, :senha)';
         $stmt = $conn -> prepare($sql);
         $stmt->bindParam(':usuario', $usuario);
         $stmt->bindParam(':data', $data);
         $stmt->bindParam('email', $email);
-        $stmt->bindParam(':senha', $senha);
+        $stmt->bindParam(':senha', $senhaHash);
 
         if ($stmt->execute()){                              
             /* Ao cadastrar com sucessor irá ser redirecionado para a página de login e mostrará um alert confirmando a cadastração do usuário  */

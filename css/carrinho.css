@@ -54,7 +54,7 @@ main{
     display: flex;
     flex-direction: start;
     justify-content: center;
-    margin: 15px;
+    margin: 10px -20px 10px -20px;
     /* background-color: black; */
 }
 
@@ -94,8 +94,10 @@ main{
     justify-content: space-between;
     align-items: end;
     margin-top: 15px;
+    margin-bottom: 20px;
     border-top: black 1px solid;
 }
+
 
 .todos{
     display: flex;
@@ -112,6 +114,7 @@ main{
 
 .position{
     margin-top: 10px;
+    /* background-color: #434343; */
 }
 
 button{
@@ -121,4 +124,102 @@ button{
     height: 30px;
     border: 1.5px solid pink;
     border-radius: 25px;
+}
+
+@media screen and (max-width: 1024px){
+    body{
+        overflow-x: hidden;
+    }
+
+    main{
+        height: calc(100vh + 100px);
+    }
+
+    table{
+        /* background-color: black; */
+        width: 100vw;
+        padding: 0 5px 0 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* ?Estilizando a carra de pesquisa do carrinho */
+    .pesquisa{
+        /* ? Section que vai onde fica o input e a imagem da lupa */
+        padding: 5px;
+        border-radius: 25px;
+        width: 220px;
+        height: 50px;
+        margin-left: 10;
+        margin-right: 0;
+    }
+    
+    .pes{
+        /* ? Estilo do input */
+        width: 100px;
+    }
+    /* ? Estilo do carrinho */
+    .carrinho{
+        /* background-color: rgba(0, 0, 0, 0.123); */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+    }
+    
+    /* ? Estilo do nome do site */
+    .logo-texto, h3{
+        font-size: 12pt;
+    }    
+
+    .topo{
+        position: relative;
+        z-index: 1;
+        margin-bottom: 750px;
+    }
+
+    .produto{
+        width: 380px;
+    }
+
+    .selecionar{
+        height: 30px;
+        width: 30px;
+        position: absolute;
+        margin: 10px;
+        
+    }
+
+    .selecionar input{
+        /* margin-right: 20px; */
+        width: 30px;
+        height: 30px;
+        border: 1px solid black;
+    }
+
+    .img{
+        margin: 10px 0 10px 0;
+        /* background-color: black; */
+    }
+    
+    .img img{
+        border-radius: 10px;
+        margin-left: 10px;
+        width: 160px;
+        height: 100%;
+    }
+
+    .informe{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        text-align: start;
+        margin-top: 10px;
+        margin-left: 5px;
+        width: 100%;
+    }
 }

@@ -18,7 +18,6 @@
     border-radius: 15px;
     font-size: 20px;
     top: 75px;
-    
 }
 
 form{
@@ -76,4 +75,22 @@ button{
     border: 1.5px solid pink;
     border-radius: 25px;
     margin-top: 10px;
+}
+
+@media screen and (max-width: 1024px){
+    body{
+        overflow-x: hidden;
+    }
+
+    .main{
+        height: calc(100vh + 100px); 
+    }
+
+    .topo{
+        position: relative;
+        z-index: 1;
+        /* margin-bottom: 960px; */
+        
+    }
+
 }

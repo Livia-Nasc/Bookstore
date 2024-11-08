@@ -61,18 +61,20 @@ input{
 }
 
 label input{
-    border-bottom: 5px;
+    gap: 5px;
 }
 
 
 
 .redefinir{
-    font-size: 10px;
     margin-top: 0;
-    margin-left: 5px;
+    margin-left: -10px;
 }
 
 .redefinir a{
+    padding: 0;
+    font-size: 14px;
+    margin-left: 20px;
     text-decoration: none;
     color: var(--cor_do_rodape);
 }
@@ -97,4 +99,10 @@ button{
     height: 30px;
     border: 1.5px solid pink;
     border-radius: 25px;
+}
+
+@media screen and (max-width: 1024px){
+    .redefinir{
+        font-size: 10px;
+    }
 }

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookstore Online</title>
     <link rel="stylesheet" href="css/style.css">
-    <!-- <link rel="stylesheet" href="css/pesquisa.css"> -->
+    <link rel="stylesheet" href="css/entrar.css">
     <script src="js/menu-animado.js"></script>
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
 </head>
@@ -18,7 +18,7 @@
             </section>
             <section>
                 <h3 class="logo-texto">Bookstore Online</h3>
-            </section>   
+            </section>  
         </section>
         <section>
             <nav>
@@ -46,23 +46,26 @@
         </section>
     </header>
     <main>
-        <section class="apresentacao">
-            <!-- ? nome da site/loja-->
-            <h1>Bookstore Online</h1>
-        </section>
-        <section class="apresentacao2">
-            <p>Conheça um pouco sobre <br> &#8595 a nossa livraria. &#8595</p>
-        </section>
-        <section class="infor">
-            <!-- ? Blocos de apresentação sobre o site e por qual proposito ele foi desenvolvido -->
-            <section class="infor2">
-                <p class="texto">Somos uma livraria jovem e inovadora, dedicada a oferecer uma grande variedade de livros a preços acessíveis, especialmente para o público jovem. Nosso compromisso é promover o hábito da leitura, disponibilizando títulos que educam, entretêm e inspiram. Acreditamos que o conhecimento e a diversão através da leitura devem estar ao alcance de todos, e nossa missão é criar as novas gerações de leitores</p>
-            </section >
-            <section class="infor3">
-                <p class="texto">
-                    Oferecemos uma seleção diversificada de livros para todas as idades e estilos. Nosso catálogo inclui romances, ficção científica, biografias e obras acadêmicas, cuidadosamente selecionados para garantir que cada leitor encontre algo de seu interesse. Buscamos fornecer uma experiência completa, com opções que vão dos clássicos da literatura aos lançamentos mais recentes, sempre valorizando a leitura.</p>
+        <section class="formulario">
+            <section class="titulo">
+                <h1>Atualizar</h1>
             </section>
+            <form action="php/atualizar_senha.php" method="post">
+                <!-- ? Formulario para o usuário já cadastrado poder voltar para o site -->
+                <label for="" class="primeiro">E-mail</label>
+                <input type="text" placeholder="Digite seu E-mmail" name="email" class="user" required>
+                <label for="">Nova senha:</label>
+                <input type="password" placeholder="Digite sua nova senha" class="place" name = "senha" required>
+                <label for="">Confirmar senha:</label>
+                <input type="password" placeholder="Confirme sua nova senha" class="place" name = "senhaConfirm" required>
+            
+                <section class="button">
+                    <!-- ? Botão que levara a pagina principal -->
+                    <button onclick="Entrar()" returne="false">entrar</button>
+                </section>
+            </form>
         </section>
     </main>
+    
 </body>
 </html>

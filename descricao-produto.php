@@ -1,5 +1,9 @@
 <?php
     session_start();
+    if((!isset ($_SESSION['usuario']) == true) and (!isset ($_SESSION['senha']) == true))
+    {
+        header('location:entrar.php');
+    }
 ?>
 
 <!DOCTYPE html>
@@ -20,30 +24,30 @@
     <header class="topo">
         <section class="logo-e-titulo">
             <section>
-                <h3 class="logo-texto">Bookstore Online</h3>
+            <h3 class="logo-texto"><a href="home.php">Bookstore Online</a></h3>
             </section>  
         </section>
         <section class="block">
-            <form action="php/pesquisa.php" method="post">
-                <section class="pesquisa">
-                    <input type="text" class="pes" placeholder="Pesquise na BookStore Online" required name = "pesquisa">
-                    <a href="#">
-                        <img src="img/lupa.png" alt="Lupa" class="lupa">
-                    </a>
-                </section>
-            </form> 
+            <section class="pesquisa">
+                <form action="php/pesquisa.php" method="post">
+                    <input type="text" class="pes" placeholder="Pesquise na BookStore Online">
+                </form>
+                <a href="#">
+                    <img src="img/lupa.png" alt="Lupa" class="lupa">
+                </a>
+            </section>
             <section class="carrinho">
-                <img src="img/carrinho.png" alt="carrinho de compras" id="carrinho" onclick="carrinho()">
+                <a href="carrinho.php"><img src="img/carrinho.png" alt="carrinho de compras" id="carrinho" onclick="carrinho()"></a>
             </section>
         </section>
     </header>
-    
     <main>
-    <?php
-    $nomeLivro = $_SESSION['nomeLivro'];
-    $lancamentoLivro = $_SESSION['lancamentoLivro'];
-    $descricaoLivro = $_SESSION['descricaoLivro'];
-    for ($i = 0; $i < count($nomeLivro); $i++) {
+        <?php
+            $titulo = $_SESSION['Titulo'];
+            $lancamento = $_SESSION['Lancamento'];
+            $descricao = $_SESSION['Descricao'];
+            $autor = $_SESSION['Autor'];
+            for ($i = 0; $i < count($titulo); $i++) {
         ?>
         <section class="produto">
             <section class="disponibilidade">
@@ -51,15 +55,15 @@
             </section>
             <section class="informes">
                 <section class="capa-livro">
-                    <img src="img/<?php echo $nomeLivro[$i]; ?>" alt="">
+                    <img src="img/autores/<?php echo $titulo[$i]; ?>" alt="">
                 </section>
                 <section class="sonopse">
                     <h1>
-                        <?php echo $nomeLivro[$i]; ?>
+                        <?php echo $titulo[$i]; ?>
                     </h1>
-                    <p class="autores">Clarisse Lispector <spam><?php echo $lancamentoLivro[$i];?></spam></p>
+                    <p class="autores"><?php echo $autor[$i]; ?> <spam><?php echo $lancamento[$i];?></spam></p>
                     <hr>
-                    <p><?php echo $descricaoLivro[$i];?></p>
+                    <p><?php echo $descricao[$i];?></p>
                 </section>
             </section>
             <section class="button">
@@ -67,10 +71,9 @@
                 <button onclick="Entrar()" returne="false">Adicionar ao carrinho</button>
             </section>
         </section>
-    <?php
-    }
+        <?php
+            }
         ?>
     </main>
-    
 </body>
 </html>

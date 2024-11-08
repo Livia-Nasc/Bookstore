@@ -33,6 +33,7 @@
     background-color: pink;
 }
 
+/* ? Estilos gerais do body */
 body{
     /* ? Estilo geral do body */
     background-color: var(--cor_de_fundo);
@@ -41,27 +42,30 @@ body{
     overflow-x: hidden; /* ? Usado para bloquear a rolagem lateral do body */
 }
 
+
+/* ? Estilos do topo */
 .topo{
     /* ? Estilo geral do topo */
     width: 100vw;
     height: 60px;
     background-color: var(--cor_do_rodape);
     display: flex;
-    align-items: flex-start;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 100px;
+    padding: 0px 50px;
+
 }
 
 .logo-img img{
     /* ? tamanho da imagem da logo */
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
 }
 
 .logo-texto{
     /* ? tamanho da fonte */
     font-size: 24px;
+    width: 500px;
 }
 
 .logo-e-titulo {
@@ -70,10 +74,11 @@ body{
     align-items: center;
     flex-direction: row;
     margin: 0;  
+    /* background-color: rgba(0, 0, 0, 0.171); */
 }
 
 .logo-e-titulo img {
-    margin: 0 20px;  
+    margin-right: 20px;  
 }
 
 .menu li{
@@ -93,6 +98,46 @@ body{
     color: #000;
 }
 
+/* ? Estilo do menu */
+.btn{
+    border: solid 1px black;
+    background-color: transparent;
+    border-radius: 2px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: none;
+    /* margin-left: 50px; */
+}
+
+.linha{
+    display: block;
+    margin: 5px auto;
+    flex-direction: column;
+    background-color: black;
+    width: 30px;
+    height: 2.5px;
+    position: relative;
+    transform-origin: center; /* ? Esse piga o ponto ancora do elemento e centraliza ele.*/
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+/* ? Animação puchada do JavaScript */
+.btn.ativar .linha:nth-child(1){
+    transform: translateY(7px) rotate(-45deg);
+    /* background-color: red; */
+}
+
+.btn.ativar .linha:nth-child(2){
+    background-color: transparent;
+}
+
+.btn.ativar .linha:nth-child(3){
+    transform: translateY(-7px) rotate(45deg);
+    /* background-color: red; */
+}
+
 /* ? Mennu mobile */
 .menu-mobile{
     background-color: #0000008c;
@@ -101,8 +146,25 @@ body{
     top: 60px;
     left: 0;
     width: 100%;
-    height: 100vh;
-    /* display: none; */
+    height: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+
+.menu-mobile nav, li, a{
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 15px 15px;
+    font-size: 16pt;
+
+}
+
+.menu-mobile li:hover{
+    background-color: rgba(0, 0, 0, 0.47);
+
 }
 
 main{
@@ -148,19 +210,46 @@ main .infor{
 
 @media screen and (max-width: 1024px){
     /* ! Cabeçalho */
+    ::-webkit-scrollbar{
+        /* ? Estilo do trilho da barra de rolagem */
+        width: 5px;
+        height: 5px;
+    }
+    
+    ::-webkit-scrollbar-thumb{
+        /* ? Estilo da barra de rolagem */
+        widows: 5px;
+        height: 2px;
+        border-radius: 30px;
+        background-color: pink;
+    }
+
+    .topo{
+        /* ? Estilo geral do topo */
+        width: 100vw;
+        height: 60px;
+        background-color: var(--cor_do_rodape);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 10px;
+    
+    }
+
     .logo-e-titulo {
         /* ? deixando tudo um do lado do outro */
         display: flex;
         align-items: center;
         flex-direction: row;
         margin: 0;  
-        /* width: 500px; */
+        width: 400px;
         /* background-color: rgba(0, 0, 0, 0.13); */
     }
     
     .logo-texto{
         /* ? tamanho da fonte */
-        font-size: 14px;
+        font-size: 20px;
+        width: 100%;
     }
     
     .menu{
@@ -197,5 +286,20 @@ main .infor{
         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.523);
         padding: 8px;
         margin-bottom: 25px;
+    }
+
+    .menu-mobile.aparecerrr{
+        visibility: visible;
+        height: calc(100vh - 60px);
+    }
+   
+
+    .btn{
+        display: block;
+    }
+
+    .titulo.sumir{
+        display: none;
+        overflow: hidden;
     }
 }

@@ -16,7 +16,7 @@
     <header class="topo">
         <section class="logo-e-titulo">
             <section>
-                <h3 class="logo-texto">Bookstore Online</h3>
+                <h3 class="logo-texto"><a href="home.php">Bookstore Online</a></h3>
             </section>  
         </section>
         <section class="block">
