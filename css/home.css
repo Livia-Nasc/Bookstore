@@ -23,9 +23,8 @@ main{
 }
 
 .livros{
-    width: 391px;
-    max-width: 391px;
-    height: 436px;
+    width: 400px;
+    height: 440px;
     border-radius: 24px;
     background-color: rgba(101, 100, 100, 0.199);
     margin-left: 15px;

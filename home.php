@@ -46,113 +46,7 @@
         </section>
     </header>
     <main>
-        <section class="Fileira" id="id">
-            <!-- ? Linha de livros com rolagem lateral.-->
-            <section class="livros">
-                <section class="sentralizar">
-                    <section class="img-livro">
-                        <!-- ? Imagem do livro -->
-                        <img src="img/todas-as-cartas.png" alt="Todas as Cartas">
-                    </section>
-                </section>
-                <section class="descricao">
-                    <!-- ? Descrição e informações adicionais sobre o livro -->
-                    <p class="titulo-livro">Todas as cartas: Edição ampliada</p>
-                    <p class="autores">por Clarice Lispector, Teresa Monteiro, e outros</p>
-                    <p class="Tcapa">
-                        Capa dura
-                    </p>
-                </section>
-                <section class="valores">
-                    <!-- ? Valores com descontos ou não -->
-                    <section class="desconto">
-                        <p class="moeda">R$: </p>
-                        <p class="vcdesconto">113,35</p>
-                        <p class="por">De:</p>
-                        <p class="vreal">149,90</p>
-                    </section>
-                </section>
-                <section class="parcelamento">
-                    <!-- ? Melhor forma de parcelamento -->
-                    <p>em até 12x de R$56,68 sem juros</p>
-                </section>
-            </section>
-            <section class="livros">
-                <section class="sentralizar">
-                    <section class="img-livro">
-                        <img src="img/todas-as-cartas.png" alt="Todas as Cartas">
-                    </section>
-                </section>
-                <section class="descricao">
-                    <p class="titulo-livro">Todas as cartas: Edição ampliada</p>
-                    <p class="autores">por Clarice Lispector, Teresa Monteiro, e outros</p>
-                    <p class="Tcapa">
-                        Capa dura
-                    </p>
-                </section>
-                <section class="valores">
-                    <section class="desconto">
-                        <p class="moeda">R$: </p>
-                        <p class="vcdesconto">113,35</p>
-                        <p class="por">De:</p>
-                        <p class="vreal">149,90</p>
-                    </section>
-                </section>
-                <section class="parcelamento">
-                    <p>em até 12x de R$56,68 sem juros</p>
-                </section>
-            </section>
-            <section class="livros">
-                <section class="sentralizar">
-                    <section class="img-livro">
-                        <img src="img/todas-as-cartas.png" alt="Todas as Cartas">
-                    </section>
-                </section>
-                <section class="descricao">
-                    <p class="titulo-livro">Todas as cartas: Edição ampliada</p>
-                    <p class="autores">por Clarice Lispector, Teresa Monteiro, e outros</p>
-                    <p class="Tcapa">
-                        Capa dura
-                    </p>
-                </section>
-                <section class="valores">
-                    <section class="desconto">
-                        <p class="moeda">R$: </p>
-                        <p class="vcdesconto">113,35</p>
-                        <p class="por">De:</p>
-                        <p class="vreal">149,90</p>
-                    </section>
-                </section>
-                <section class="parcelamento">
-                    <p>em até 12x de R$56,68 sem juros</p>
-                </section>
-            </section>
-            <section class="livros">
-                <section class="sentralizar">
-                    <section class="img-livro">
-                        <img src="img/todas-as-cartas.png" alt="Todas as Cartas">
-                    </section>
-                </section>
-                <section class="descricao">
-                    <p class="titulo-livro">Todas as cartas: Edição ampliada</p>
-                    <p class="autores">por Clarice Lispector, Teresa Monteiro, e outros</p>
-                    <p class="Tcapa">
-                        Capa dura
-                    </p>
-                </section>
-                <section class="valores">
-                    <section class="desconto">
-                        <p class="moeda">R$: </p>
-                        <p class="vcdesconto">113,35</p>
-                        <p class="por">De:</p>
-                        <p class="vreal">149,90</p>
-                    </section>
-                </section>
-                <section class="parcelamento">
-                    <p>em até 12x de R$56,68 sem juros</p>
-                </section>
-            </section>
-        </section>
+        
         <section class="Fileira">
             <?php
                 $titulo = $_SESSION['Titulo'];
@@ -160,7 +54,7 @@
                 $descricao = $_SESSION['Descricao'];
                 $autor = $_SESSION['Autor'];
                 $id_livro =  $_SESSION['id_livro'];
-                for ($i = 0; $i < count($titulo); $i++) {
+                for ($i = 1; $i < 13; $i++) {
             ?>
             <section class="livros">
                 <section class="sentralizar">

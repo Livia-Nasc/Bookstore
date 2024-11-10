@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -21,7 +25,7 @@
         </section>
         <section class="block">
             <section class="pesquisa">
-            <form action="php/pesquisa.php" method="post">
+                <form action="php/pesquisa.php" method="post">
                     <input type="text" class="pes" placeholder="Pesquise na BookStore Online">
                 </form>
                 <a href="#">
@@ -34,39 +38,34 @@
         </section>
     </header>
     <main>
-        
         <section class="alinha-carrinho">
             <table>
                 <?php
-                    session_start();
-                    $titulo = $_SESSION['Titulo'];
-                    $lancamento = $_SESSION['Lancamento'];
-                    $descricao = $_SESSION['Descricao'];
-                    $autor = $_SESSION['Autor'];
-                    $id_livros = $_SESSION['id_livros'];
-                    $preco = $_SESSION['preco'];
-                    for ($i = 0; $i < count($titulo); $i++) {
-                        $produtoId = $i; // Supondo que o índice seja o ID do produto
+                if (isset($_SESSION['carrinho']) && count($_SESSION['carrinho']) > 0) {
+                    $total = 0;
+                    foreach ($_SESSION['carrinho'] as $index => $produto) {
+                        // Soma o total
+                        $total += floatval($produto['preco']);
                 ?>
                 <tbody class="coluna">
                     <tr class="produto">
                         <td class="selecionar">
-                            <input type="checkbox" name="precos[]" value="<?php echo $preco[$i] ?>" onclick="atualizarTotal()">
+                            <input type="checkbox" name="precos[]" value="<?php echo $produto['preco']; ?>" onclick="atualizarTotal()">
                         </td>
                         <td class="img">
-                            <img src="img/autores/<?php echo $id_livros[$i]; ?>.jpg" alt="">
+                            <img src="img/autores/<?php echo $produto['produtoId']; ?>.jpg" alt="">
                         </td>
                         <td class="informe">
                             <section class="descricao">
-                                <p class="titulo-livro"><?php echo $titulo[$i]; ?></p>
-                                <p class="autores"><?php echo $autor[$i]; ?></p>
+                                <p class="titulo-livro"><?php echo $produto['titulo']; ?></p>
+                                <p class="autores"><?php echo $produto['autor']; ?></p>
                             </section>
                             <section class="valores">
                                 <section class="desconto">
                                     <p class="moeda">R$: </p>
-                                    <p class="vcdesconto">113,35</p>
+                                    <p class="vcdesconto"><?php echo number_format($produto['preco'], 2, ',', '.'); ?></p>
                                     <p class="por">De:</p>
-                                    <p class="vreal"><?php echo number_format($preco[$i], 2, ',', '.'); ?></p>
+                                    <p class="vreal"><?php echo number_format($produto['preco'], 2, ',', '.'); ?></p>
                                 </section>
                             </section>
                             <section class="parcelamento">
@@ -82,23 +81,24 @@
                 </tbody>
                 <?php
                     }
+                } else {
+                    echo '<tr><td colspan="4">Seu carrinho está vazio.</td></tr>';
+                }
                 ?>
                 <tfoot class="finalizar">
-                    <!-- ? Separação para o usuario confimra a compra, esse botão não fara nada, só direcionara o usuário pra uma tela que diz: "Obrigado por assistir nossa apresetanção e por visitar nosso site" -->
                     <tr>
                         <td class="todos">
                             <input type="checkbox" onclick="selecionarTodos(this)">
                             <p>Selecionar todos (<span id="contidade"></span>)</p>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="position">
-                                <!-- ? Essa section serve para que o dois elementos a boixo se permação um em cima do outro sem sobre com o estilo da sectio "finalizar" -->
-                                <p>Total: R$ <span id="total">0,00</span></p>
-                                <input type="hidden" name="total_calculado" id="total_calculado" value="0">
-                                <button type="submit">Finalizar Compra</button>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td class="position">
+                            <p>Total: R$ <span id="total"><?php echo number_format($total, 2, ',', '.'); ?></span></p>
+                            <input type="hidden" name="total_calculado" id="total_calculado" value="<?php echo $total; ?>">
+                            <button type="submit">Finalizar Compra</button>
+                        </td>
+                    </tr>
                 </tfoot>
             </table>
         </section>

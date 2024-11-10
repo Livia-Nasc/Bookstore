@@ -1,11 +1,3 @@
-<?php
-    session_start();
-    if((!isset ($_SESSION['usuario']) == true) and (!isset ($_SESSION['senha']) == true))
-    {
-        header('location:entrar.php');
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -13,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookstore Online</title>
     <link rel="stylesheet" href="css/style.css">
-    <!-- <link rel="stylesheet" href="css/home.css"> -->
     <link rel="stylesheet" href="css/pesquisa.css">
     <link rel="stylesheet" href="css/produto.css">
-
     <script src="js/principal.js"></script>
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
 </head>
@@ -37,19 +27,20 @@
                 </a>
             </section>
             <section class="carrinho">
-                <a href="carrinho.php"><img src="img/carrinho.png" alt="carrinho de compras" id="carrinho" onclick="carrinho()"></a>
+                <a href="carrinho.php"><img src="img/carrinho.png" alt="carrinho de compras" id="carrinho"></a>
             </section>
         </section>
     </header>
     <main>
         <?php
+            session_start();
             $titulo = $_SESSION['Titulo'];
             $lancamento = $_SESSION['Lancamento'];
             $descricao = $_SESSION['Descricao'];
             $autor = $_SESSION['Autor'];
-            $id_livros = $_SESSION['id_livros'];
-            $preco = $_SESSION['preco'];
+            $preco = 113.95; // Preço fixo para este exemplo
             for ($i = 0; $i < count($titulo); $i++) {
+                $produtoId = $i; // Supondo que o índice seja o ID do produto
         ?>
         <section class="produto">
             <section class="disponibilidade">
@@ -57,28 +48,21 @@
             </section>
             <section class="informes">
                 <section class="capa-livro">
-                <img src="img/autores/<?php echo $id_livros[$i]; ?>.jpg" alt="<?php echo $titulo[$i] ?>">
+                    <img src="img/autores/<?php echo $imagem; ?>" alt="">
                 </section>
-                <section class="sonopse">
-                    <h1>
-                        <?php echo $titulo[$i]; ?>
-                    </h1>
-                    <p class="autores"><?php echo $autor[$i]; ?> <spam><?php echo $lancamento[$i];?></spam></p>
+                <section class="sinopse">
+                    <h1><?php echo $titulo[$i]; ?></h1>
+                    <p class="autores"><?php echo $autor[$i]; ?> <span><?php echo $lancamento[$i]; ?></span></p>
                     <hr>
-                    <p><?php echo $descricao[$i];?></p>
+                    <p><?php echo $descricao[$i]; ?></p>
                 </section>
             </section>
             <section class="button">
-                <p>Valor: R$ <?php echo number_format($preco[$i], 2, ',', '.'); ?></p>
+                <p>Valor: R$ <?php echo number_format($preco, 2, ',', '.'); ?></p>
                 <form action="php/adicionarCarrinho.php" method="post">
-                    <input type="hidden" name="produtoId" value="<?php echo $id_livros[$i]; ?>">
-                    <input type="hidden" name="preco" value="<?php echo $preco[$i]; ?>">
-                    <input type="hidden" name="imagem" value="<?php echo $id_livros[$i]; ?>">
-                    <input type="hidden" name="autor" value="<?php echo $autor[$i]; ?>">
-                    <input type="hidden" name="descricao" value="<?php echo $descricao[$i]; ?>">
+                    
                     <button type="submit">Adicionar ao carrinho</button>
                 </form>
-
             </section>
         </section>
         <?php

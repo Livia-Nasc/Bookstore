@@ -28,20 +28,22 @@
             <section class="titulo">
                 <h1>Cadastrar Livro</h1>
             </section>
-            <form action="" method="post">
+            <form action="php/cadastrar-livro.php" method="post">
                 <!-- ? Formulario para o administrador poder cadastrar novos livros, para conseguir cadastrar outros autores isso devera ser feito diretamente no SQL -->
                 <label for="" class="primeiro">Nome do livro:</label>
-                <input type="text" placeholder="Digite o nome do livro" name="usuario">
+                <input type="text" placeholder="Digite o nome do livro" name="nome" required>
                 <label for="">Nome do Autor:</label>
-                <input type="email" placeholder="Digite o nome do autor" name="email">
+                <input type="text" placeholder="Digite o nome do autor" name="autor" required>
                 
                 <label for="">Ano de lançamento</label>
-                <input type="date" placeholder="MM/DD/YYYY" name="data">
+                <input type="text" placeholder=YYYY name="lancamento" required>
                 
                 <label for="">isbn:</label>
-                <input type="password" placeholder="Digite o isbn">
+                <input type="password" placeholder="Digite o isbn" name="isbn" required>
                 <label for="">Descrição</label>
-                <input type="password" placeholder="Digite a sinopse">
+                <input type="password" placeholder="Digite a sinopse" name="descricao" required>
+                <label for="">Preco:</label>
+                <input type="password" placeholder="Digite o valor do livro" name="preco" required>
                 
                 <section class="button">
                     <!-- ? Botão que levara as informações sobre o novo livro para o banco de dados -->
