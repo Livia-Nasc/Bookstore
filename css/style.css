@@ -17,6 +17,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+    text-align: left;
 }
 
 ::-webkit-scrollbar{
@@ -56,6 +57,7 @@ body{
 
 }
 
+/* ? Irá estilizar a logo em todas as páginas */
 .logo-img img{
     /* ? tamanho da imagem da logo */
     width: 40px;
@@ -78,16 +80,20 @@ body{
 }
 
 .logo-e-titulo img {
+    /* ? Irá determinar a margin a direita da imagem */
     margin-right: 20px;  
 }
 
+/* ? Estilisação do menu */
 .menu li{
+    /* ? Irá estilizar a lista onde fica o menu */
     display: inline-block;
     margin-left: 20px;
     
 }
 
 .menu li a{
+    /* ? Dará o estilo aos links do menu */
     text-decoration: none;
     color: #0000007d;
     font-size: 14px;
@@ -95,10 +101,11 @@ body{
 }
 
 .menu li a:hover{
+    /* ? Assim que o mouse ficar em cima dos links, ele trocara a sua cor. */
     color: #000;
 }
 
-/* ? Estilo do menu */
+/* ? Estilo do botão do menu */
 .btn{
     border: solid 1px black;
     background-color: transparent;
@@ -111,6 +118,7 @@ body{
 }
 
 .linha{
+    /* ? Irá dar o tamanho das linhas que ficaram dentro do botão para o menu mobile */
     display: block;
     margin: 5px auto;
     flex-direction: column;
@@ -125,21 +133,23 @@ body{
 
 /* ? Animação puchada do JavaScript */
 .btn.ativar .linha:nth-child(1){
+    /* ? quando a classe "ativar" existir junto com .btn, a primeira linha irá subir 7 no eixo y e ira rotacionar -45deg */
     transform: translateY(7px) rotate(-45deg);
-    /* background-color: red; */
 }
 
 .btn.ativar .linha:nth-child(2){
+    /* ? quando a classe "ativar" existir junto com .btn, terceira linha irá desaparecer*/
     background-color: transparent;
 }
 
 .btn.ativar .linha:nth-child(3){
+    /* ? quando a classe "ativar" existir junto com .btn, a terceira linha irá decer -7 no eixo y e ira rotacionar 45deg */
     transform: translateY(-7px) rotate(45deg);
-    /* background-color: red; */
 }
 
 /* ? Mennu mobile */
 .menu-mobile{
+    /* ? Dará o estilo do menu mobile assim que o botão for clicado */
     background-color: #0000008c;
     backdrop-filter: blur(10px); /* ? deixa com um efeito de vidro*/
     position: absolute;
@@ -154,6 +164,7 @@ body{
 
 
 .menu-mobile nav, li, a{
+    /* ? Estilo dos links do menu mobile */
     color: white;
     text-decoration: none;
     display: block;
@@ -163,26 +174,32 @@ body{
 }
 
 .menu-mobile li:hover{
+    /* ? Assim que o usuário clicar na li ela irá mudar a cor do fundo. */
     background-color: rgba(0, 0, 0, 0.47);
 
 }
 
+/* ? Estilização do main */
 main{
+    /* ? Deixa tudo o que estiver dentro do main no centro da tela. */
     text-align: center;
     align-items: center;
     /* background-color: var(--cor_de_fundo); */
 }
 
 main .apresentacao{
+    /* ? Muda o tamanho da fonte da apresentação do site e o quanto de margin ele terá no seu topo. */
     font-size: 45px;
     margin-top: 25px ;
 }
 
 main .apresentacao2{
+    /* ? Modifica o tamanho da fonte do texto que estigara o usuário a ler sobre o que é nosso site. */
     font-size: 30px;
 }
 
 main .infor{
+    /* ? Determina como a section que carrega as informações sobre o nosso site irá se comportar */
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -191,8 +208,8 @@ main .infor{
 }
 
 .infor2, .infor3{
+    /* ? Determinara o tamanho, cor, tamanho da fonte, etc.*/
     width: 450px;
-    /* height: 500px; */
     background-color: var(--cor_do_rodape);
     font-size: 25px;
     text-align: center;

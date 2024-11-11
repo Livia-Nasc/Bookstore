@@ -19,7 +19,7 @@ main{
     display: flex;
     flex-direction: column;
     /* background-color: black; */
-    width: 100%;
+    width: 95vw;
 }
 
 .produto{
@@ -60,6 +60,9 @@ main{
 
 .img img{
     border-radius: 10px;
+    height: 220px;
+    margin-left: 20px;
+    margin-right: 40px;
 }
 
 .informe{
@@ -122,7 +125,7 @@ button{
     background-color: white;
     width: 150px;
     height: 30px;
-    border: 1.5px solid pink;
+    border: 1.5px solid black;
     border-radius: 25px;
 }
 
@@ -162,7 +165,6 @@ button{
     }
     /* ? Estilo do carrinho */
     .carrinho{
-        /* background-color: rgba(0, 0, 0, 0.123); */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -207,11 +209,10 @@ button{
     }
     
     .img img{
-        margin-right: 50px;
         border-radius: 10px;
-        height: 220px;
-        width: 130px;
-        margin-left: 20px;
+        margin-left: 10px;
+        width: 160px;
+        height: 100%;
     }
 
     .informe{
@@ -221,6 +222,10 @@ button{
         text-align: start;
         margin-top: 10px;
         margin-left: 5px;
+        width: 100%;
+    }
+    
+    .coluna{
         width: 100%;
     }
 }

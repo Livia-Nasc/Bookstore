@@ -20,7 +20,7 @@
             </section>  
         </section>
         <section>
-            <a href="home.php"><img src="img/arrow-left.svg" alt="carrinho de compras" id="carrinho" onclick="carrinho()"></a>
+            <a href="home.html"><img src="img/arrow-left.svg" alt="carrinho de compras" id="carrinho" onclick="carrinho()"></a>
         </section>
     </header>
     <main>
@@ -43,7 +43,7 @@
                 <label for="">Descrição</label>
                 <input type="password" placeholder="Digite a sinopse" name="descricao" required>
                 <label for="">Preco:</label>
-                <input type="password" placeholder="Digite o valor do livro" name="preco" required>
+                <input type="number" placeholder="Digite o valor do livro" name="preco" required>
                 
                 <section class="button">
                     <!-- ? Botão que levara as informações sobre o novo livro para o banco de dados -->

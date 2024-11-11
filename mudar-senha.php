@@ -28,13 +28,13 @@
                     <li><a href="cadastrar.php">Cadastrar-se</a></li>
                     <li><a href="entrar.php">Entrar</a></li>
                 </ul>
-
+                <!-- ? Botão animado do menu mobile -->
                 <button class="btn" onclick="BtnAnimado()">
                     <span class="linha"></span>
                     <span class="linha"></span>
                     <span class="linha"></span>
                 </button>
-
+                <!-- ? Menu igual que só será visivel caso o usuário clique no botão acima. -->
                 <section class="menu-mobile" id="menu-mobile" onclick="BtnAnimado()">
                     <ul>
                         <li><a href="index.php">Inicio</a></li>

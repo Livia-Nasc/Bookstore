@@ -20,7 +20,7 @@
             </section>
         </section>
         <section>
-            <a href="home.php"><img src="img/arrow-left.svg" alt="carrinho de compras" id="carrinho" onclick="carrinho()"></a>
+            <a href="home.html"><img src="img/arrow-left.svg" alt="carrinho de compras" id="carrinho" onclick="carrinho()"></a>
         </section>
     </header>
     <main>
@@ -28,7 +28,7 @@
             <section class="titulo">
                 <h1>Cadastrar Autor</h1>
             </section>
-            <form action="php/cadastrar-autor.php" method="post">
+            <form action="" method="post">
                 <!-- ? Formulario para o administrador poder cadastrar novos livros, para conseguir cadastrar outros autores isso devera ser feito diretamente no SQL -->
                 <label for="" class="primeiro">Nome do autor:</label>
                 <input type="text" placeholder="Digite o nome do autor" name="nome" required>

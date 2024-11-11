@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookstore Online</title>
     <link rel="stylesheet" href="css/style.css">
-    <!-- <link rel="stylesheet" href="css/pesquisa.css"> -->
     <script src="js/menu-animado.js"></script>
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
 </head>
@@ -28,15 +27,15 @@
                     <li><a href="cadastrar.php">Cadastrar-se</a></li>
                     <li><a href="entrar.php">Entrar</a></li>
                 </ul>
-
+                <!-- ? Botão animado do menu mobile -->
                 <button class="btn" onclick="BtnAnimado()">
                     <span class="linha"></span>
                     <span class="linha"></span>
                     <span class="linha"></span>
                 </button>
-
+                <!-- ? Menu igual que só será visivel caso o usuário clique no botão acima. -->
                 <section class="menu-mobile" id="menu-mobile" onclick="BtnAnimado()">
-                    <ul>
+                <ul>
                         <li><a href="index.php">Inicio</a></li>
                         <li><a href="cadastrar.php">Cadastrar-se</a></li>
                         <li><a href="entrar.php">Entrar</a></li>

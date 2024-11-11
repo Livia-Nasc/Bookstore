@@ -24,7 +24,7 @@ main{
 
 .livros{
     width: 400px;
-    height: 440px;
+    height: 450px;
     border-radius: 24px;
     background-color: rgba(101, 100, 100, 0.199);
     margin-left: 15px;
@@ -93,26 +93,12 @@ main{
 }
 
 .moeda{
-    font-size: 9px;
-    margin-top: 4px;
+    font-size: 24px;
 }
 
 .vcdesconto{
     font-size: 24px;
     margin-left: 2.5px;
-}
-
-.vreal{
-    text-decoration: line-through;
-    margin-left: 2px;
-}
-
-.por{
-    margin-left: 3px;
-}
-
-.por, .vreal{
-    margin-top: 15px;
 }
 
 footer{

@@ -1,10 +1,15 @@
 <?php 
+    // Inicia a sessão
     session_start();
+
+    // Verifica se as variáveis de sessão 'usuario' e 'senha' estão definidas
+    // Se estiverem, redireciona o usuário para a página home.php
     if((isset ($_SESSION['usuario']) == true) and (isset ($_SESSION['senha']) == true))
     {
-    header('location:home.php');
+        header('location:home.php');
     }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -36,13 +41,13 @@
                     <li><a href="cadastrar.php">Cadastrar-se</a></li>
                     <li><a href="entrar.php">Entrar</a></li>
                 </ul>
-
+                <!-- ? Botão animado do menu mobile -->
                 <button class="btn" onclick="BtnAnimado()">
                     <span class="linha"></span>
                     <span class="linha"></span>
                     <span class="linha"></span>
                 </button>
-
+                <!-- ? Menu igual que só será visivel caso o usuário clique no botão acima. -->
                 <section class="menu-mobile" id="menu-mobile" onclick="BtnAnimado()">
                     <ul>
                         <li><a href="index.php">Inicio</a></li>
