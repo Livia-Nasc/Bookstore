@@ -87,6 +87,11 @@ main{
     width: 30px;
     height: 30px;
 }
+.lixeira button{
+    background-color: transparent;
+    width: fit-content;
+    border: none;
+}
 
 .finalizar{
     /* ? Section onde fica o valor do carrinho, e o botão para finalizar a compra */

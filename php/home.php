@@ -7,14 +7,14 @@ $conn = getConexao();
 
 // Verifica se o usuário está logado; se não, redireciona para a página de login
 if (!isset($_SESSION['usuario'])) {
-    header("Location: ../login.php");
+    header("Location: entrar.php");
     exit;
 }
 
 $usuario = $_SESSION['usuario']; // Recupera o nome de usuário da sessão
 
 // Prepara e executa uma consulta para verificar se o usuário existe no banco de dados
-$sql = "SELECT * FROM user WHERE usuario = :usuario";
+$sql = "SELECT * FROM user WHERE id_usuario = :usuario";
 $stmt = $conn->prepare($sql);
 $stmt->bindParam(':usuario', $usuario);
 $stmt->execute();

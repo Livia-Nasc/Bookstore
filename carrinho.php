@@ -1,3 +1,7 @@
+<?php
+    include 'php/carrinho.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -27,10 +31,11 @@
             <section class="pesquisa">
                 <form action="php/pesquisa.php" method="post">
                     <input type="text" class="pes" placeholder="Pesquise na BookStore Online">
-                    <a href="#">
-                        <img src="img/lupa.png" alt="Lupa" class="lupa">
-                    </a>
                 </form>
+                <a href="#">
+                    <img src="img/lupa.png" alt="Lupa" class="lupa">
+                </a>
+                
             </section>
             <section class="carrinho">
                 <a href="home.php"><img src="img/arrow-left.svg" alt="carrinho de compras" id="carrinho" onclick="carrinho()"></a>
@@ -40,56 +45,51 @@
     <main>
         
         <section class="alinha-carrinho">
+            <?php if (empty($livrosCarrinho)){ ?>
+                <!-- Mensagem de carrinho vazio -->
+                <p class="mensagem-vazio">Carrinho vazio</p>
+           <?php }else{ ?>
             <!-- ? Tabela onde ficará todos os produtos que o usuário adicionar ao seu carrinho. -->
             <table>
-                <?php
-                    // Inicia a sessão
-                    session_start();
-
-                    // Obtém as variáveis de sessão para exibir os detalhes dos produtos no carrinho
-                    $titulo = $_SESSION['Titulo'];
-                    $lancamento = $_SESSION['Lancamento'];
-                    $descricao = $_SESSION['Descricao'];
-                    $autor = $_SESSION['Autor'];
-                    $id_livros = $_SESSION['Id_livros'];
-                    $preco = $_SESSION['Preco'];
-
-                    // Loop para exibir os produtos no carrinho
-                    for ($i = 0; $i < count($titulo); $i++) {
-                ?>
+                <?php foreach ($livrosCarrinho as $livro){ ?>
                 <tbody class="coluna">
                     <!-- ? Linha onde ficara armazenado o primerio produto que for adicionado ao carrinho -->
                     <tr class="produto">
                         <!-- ? Botão onde o usuario podera selecionar o produto para finalizar a compra. -->
                         <td class="selecionar">
-                            <input type="checkbox" name="precos[]" value="<?php echo $preco[$i] ?>" onclick="atualizarTotal()">
+                            <input type="checkbox" name="precos[]" value="<?php echo $livro['preco'] ?>" onclick="atualizarTotal()">
                         </td>
                         <!-- ? Imagem do produto que o usuário adicou ao carrinho. -->
                         <td class="img">
-                            <img src="img/autores/<?php echo $id_livros[$i]; ?>.jpg" alt="">
+                        <img src="img/autores/<?php echo $livro['id_livros']; ?>.jpg" alt="<?php echo $livro['titulo']; ?>">
                         </td>
                         <td class="informe">
                             <!-- ? Descrição simples do produto -->
                             <section class="descricao">
-                                <p class="titulo-livro"><?php echo $titulo[$i]; ?></p>
-                                <p class="autores"><?php echo $autor[$i]; ?></p>
+                                <p class="titulo-livro"><?php echo $livro['titulo']; ?></p> 
+                                <p class="autores"><?php echo $livro['autor']; ?></p>
                             </section>
                             <!-- ? Valores do produto -->
                             <section class="valores">
                                 <section class="desconto">
                                     <p class="moeda">R$: </p>
-                                    <p class="vcdesconto"><?php echo number_format($preco[$i], 2, ',', '.'); ?></p>
+                                    <p class="vcdesconto"><?php echo number_format($livro['preco'], 2, ',', '.'); ?></p>
                                 </section>
                             </section>
                             <!-- ? Quantidades que o usuário pode parcelar sem juros -->
                             <section class="parcelamento">
-                                <p>em até 2x de <?php echo number_format($preco[$i]/2, 2, ',', '.'); ?> sem juros</p>
+                                <p>em até 2x de R$<?php echo number_format($livro['preco'] / 2, 2, ',', '.'); ?> sem juros</p>
                             </section>
                         </td>
                         <td>
                             <!-- ? Lixeira que ao ser clicada irá excluir o item. -->
                             <section class="lixeira">
-                                <img src="img/lixeira.png" alt="lixeira">
+                            <form action="php/excluirCarrinho.php" method="post" onsubmit="return confirm('Tem certeza que deseja excluir este item do carrinho?');">
+                                <input type="hidden" name="id_livros" value="<?php echo $livro['id_livros']; ?>">
+                                <button type="submit">
+                                    <img src="img/lixeira.png" alt="lixeira">
+                                </button>
+                            </form>
                             </section>
                         </td>
                     </tr>
@@ -115,6 +115,7 @@
                         </tr>
                 </tfoot>
             </table>
+            <?php } ?>
         </section>
     </main>
 </body>

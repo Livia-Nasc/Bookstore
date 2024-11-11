@@ -33,7 +33,7 @@ $admin = $_SESSION['admin'];
 $nome = isset($_POST["pesquisa"]) ? $_POST["pesquisa"] : '';
 
 // Prepara e executa a consulta para buscar o usuário no banco de dados
-$sql = "SELECT * FROM user WHERE usuario = :usuario";
+$sql = "SELECT * FROM user WHERE id_usuario = :usuario";
 $stmt = $conn->prepare($sql);
 $stmt->bindParam(':usuario', $usuario);
 $stmt->execute();

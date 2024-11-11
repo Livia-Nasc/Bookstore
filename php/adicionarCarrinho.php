@@ -1,25 +1,30 @@
 <?php
 session_start(); // Inicia a sessão ou retoma a sessão existente
 
-// Verifica se a sessão do carrinho já existe. Se não, cria um carrinho vazio.
-if (!isset($_SESSION['carrinho'])) {
-    $_SESSION['carrinho'] = [];
+// Inclui o arquivo de conexão com o banco de dados
+include 'conexao.php';
+$conn = getConexao();
+// Verifica se a sessão do usuário está ativa
+if (!isset($_SESSION['usuario'])) {
+    header('location:../entrar.php'); // Redireciona para login se não estiver logado
+    exit;
 }
 
-// Pega as informações do produto enviadas pelo formulário via POST
-$produto = [
-    'id_livros' => $_POST['id_livros'], // ID do livro
-    'preco' => $_POST['preco'],         // Preço do livro
-    'titulo' => $_POST['titulo'],       // Título do livro
-    'autor' => $_POST['autor'],         // Autor do livro
-    'descricao' => $_POST['descricao'], // Descrição do livro
-    'lancamento' => $_POST['lancamento'], // Data de lançamento do livro
-];
+// Obtém os dados do produto enviados pelo formulário via POST
+$id_livros = $_POST['id_livros'];
+$usuario = $_SESSION['usuario'];
 
-// Adiciona o produto ao carrinho, que é armazenado na sessão
-$_SESSION['carrinho'][] = $produto;
+// Insere o item no carrinho do banco de dados
+$sql = 'INSERT INTO carrinho(id_usuario, id_livros) VALUES (:id_usuario, :id_livros)';
+$stmt = $conn->prepare($sql);
+$stmt->bindParam(':id_usuario', $usuario);
+$stmt->bindParam(':id_livros', $id_livros);
 
-// Redireciona o usuário para a página de carrinho após adicionar o produto
-header('Location: ../carrinho.php');
-exit; // Garante que o script pare de ser executado após o redirecionamento
+if ($stmt->execute()) {
+    // Redireciona para o carrinho se a inserção for bem-sucedida
+    header('Location: ../carrinho.php');
+    exit;
+} else {
+    echo "Erro ao adicionar ao carrinho.";
+}
 ?>

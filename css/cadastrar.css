@@ -18,6 +18,10 @@
     border-radius: 15px;
     font-size: 20px;
     top: 75px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 form{
@@ -34,11 +38,11 @@ form{
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.523);
 }
 
-/* form button{
-    position: absolute;
-    top: 450px;
-    right: 560px;
-} */
+form button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .primeiro{
     margin-top: 20px;

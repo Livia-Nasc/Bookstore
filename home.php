@@ -5,7 +5,7 @@
     // Verifica se as variáveis de sessão 'usuario' e 'senha' estão definidas
     // Se não estiverem, redireciona para a página de login (entrar.php)
     if ((!isset($_SESSION['usuario']) == true) and (!isset($_SESSION['senha']) == true)) {
-        header('location:entrar.php');
+        header('location: entrar.php');
     }
 ?>
 
@@ -82,7 +82,7 @@
                             </section>
                         </section>
                         <section class="parcelamento">
-                            <p>em até 2x de R$56,68 sem juros</p>
+                            <p>em até 2x de R$<?php echo number_format($preco[$i]/2, 2, ',', '.'); ?> sem juros</p>
                         </section>
                     </section>
             <?php

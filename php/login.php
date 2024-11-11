@@ -23,12 +23,12 @@ if ($stmt->rowCount() == 1) {
     // Obtém os dados do usuário
     $usuarioData = $stmt->fetch();
     $senhaHash = $usuarioData['senha'];  // Recupera o hash da senha armazenada no banco
-
+    
     // Verifica se a senha fornecida corresponde ao hash da senha armazenado
     if (password_verify($senha, $senhaHash)) {
         // Se a senha for correta, registra o nome do usuário e sua função (admin) na sessão
-        $_SESSION['usuario'] = $usuario;
         $_SESSION['admin'] = $usuarioData['admin'];
+        $_SESSION['usuario'] = $usuarioData['id_usuario'];
         
         // Redireciona para a página inicial após login bem-sucedido
         header("Location: ../home.php");
