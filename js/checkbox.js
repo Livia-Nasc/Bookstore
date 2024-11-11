@@ -27,4 +27,5 @@ function selecionarTodos(checkbox) {
     
     // Chama a função para atualizar o total após a seleção
     atualizarTotal();
+    
 }
