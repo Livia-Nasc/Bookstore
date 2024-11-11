@@ -20,7 +20,7 @@
             </section>  
         </section>
         <section>
-            <a href="home.html"><img src="img/arrow-left.svg" alt="carrinho de compras" id="carrinho" onclick="carrinho()"></a>
+            <a href="home.php"><img src="img/arrow-left.svg" alt="carrinho de compras" id="carrinho" onclick="carrinho()"></a>
         </section>
     </header>
     <main>
