@@ -1,6 +1,6 @@
 <?php
-    // Inclui o arquivo teste.php
-    require('php/teste.php');
+    // Inclui o arquivo home.php
+    require('php/home.php');
 
     // Verifica se as variáveis de sessão 'usuario' e 'senha' estão definidas
     // Se não estiverem, redireciona para a página de login (entrar.php)
