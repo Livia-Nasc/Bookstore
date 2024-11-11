@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 11/11/2024 às 03:03
+-- Tempo de geração: 11/11/2024 às 20:56
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -64,6 +64,27 @@ INSERT INTO `autores` (`id_autores`, `nome`, `nascimento`, `nacionalidade`) VALU
 (23, 'Moacyr Scliar', '1937-03-23', 'Brasileiro'),
 (24, 'Jennifer L. Armentrout', '1980-06-11', 'Americana'),
 (25, 'Ali Hazelwood', '1989-12-11', 'Italiana');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `carrinho`
+--
+
+CREATE TABLE `carrinho` (
+  `id_usuario` int(11) NOT NULL,
+  `id_livros` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Despejando dados para a tabela `carrinho`
+--
+
+INSERT INTO `carrinho` (`id_usuario`, `id_livros`) VALUES
+(1, 1),
+(1, 4),
+(1, 13),
+(1, 22);
 
 -- --------------------------------------------------------
 
@@ -185,6 +206,13 @@ ALTER TABLE `autores`
   ADD PRIMARY KEY (`id_autores`);
 
 --
+-- Índices de tabela `carrinho`
+--
+ALTER TABLE `carrinho`
+  ADD PRIMARY KEY (`id_usuario`,`id_livros`),
+  ADD KEY `id_livros` (`id_livros`);
+
+--
 -- Índices de tabela `categorias`
 --
 ALTER TABLE `categorias`
@@ -219,11 +247,18 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de tabela `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restrições para tabelas despejadas
 --
+
+--
+-- Restrições para tabelas `carrinho`
+--
+ALTER TABLE `carrinho`
+  ADD CONSTRAINT `carrinho_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `user` (`id_usuario`),
+  ADD CONSTRAINT `carrinho_ibfk_2` FOREIGN KEY (`id_livros`) REFERENCES `livros` (`id_livros`);
 
 --
 -- Restrições para tabelas `livros`
