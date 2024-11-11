@@ -1,4 +1,5 @@
 :root{
+    /* ? Variaveis com as imagem do site (a palheta de cor ainda será votada!) */
     --cor_do_fundo: #c12387;
     --cor_de_fundo0: #d7d7d785;
     --rascunho: #eaeaea;
@@ -8,11 +9,12 @@
     --tipo_capa: #0993D8;
 }
 
+/* ? Estilização geral do body, faz com que por padrão, tudo o que esteja dentro do body tinha margin: 0; */
 body{
     margin: 0;
-    /* overflow-x: hidden !important; */
 }
 
+/* ? Estilização da main, Aqui determina que a main para toda a vw e toda a vh, tudo que estiver dentro dela irá respeitar o paddin de 15px, então nada fica na borda do main.  */
 main{
     width: 100vw;
     height:100vh;  /*! teste para saber o que tá dando rolagem*/
@@ -22,6 +24,7 @@ main{
     align-items: center;
 }
 
+/* ? Estilização que determina como a section livros vai se comportar e como os elementos seram divididos, determina o tamnho, altura, o quão aredondado a borda vai ser, cor de fundo e etc. */
 .livros{
     width: 400px;
     height: 450px;
@@ -32,12 +35,15 @@ main{
     padding: 15px 25px 15px 25px;
 }
 
+
+/* ? Determina como a fileira de produtos vai dispor os elementos. */
 .Fileira{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
+/* ? Centreliza os elementos dentro da section .sentralizar */
 .sentralizar{
     display: flex;
     align-items: center;
@@ -46,6 +52,7 @@ main{
 
 }
 
+/* ? Determina como a section que ira armazenar a imagem do livro, deve ser comportar e sua altura. */
 .img-livro {
     height: 300px;
     display: flex;
@@ -53,12 +60,14 @@ main{
     align-items: center;    
 }
 
+/* ? Determina o tamanho e altura da imagem e o background, para caso a imagem não sejá carregada tenha um quadrado preto e não um espaço vazio. */
 .img-livro img{
     height: 300px;
     width: 200px;
     background-color: black ;
 }
 
+/* ? Determina como as sections abaixo iram se comportar e como irá destribuir seus elementos. */
 .descricao, .valores, .parcelamento{
     display: flex;
     flex-direction: column;
@@ -66,41 +75,50 @@ main{
     width: 100%;
 }
 
+/* ? Modificando o tamanho da fonte dentro das sections a seguir. */
 .autores, .Tcapa, .parcelamento{
     font-size: 11px;
 }
 
+/* ? modificanod a cor que os nomes dos autores e do parcelamento é apresentado. */
 .autores, .parcelamento{
     color: var(--nome_autores);
 }
 
+/* ? Cor que o tipo da capa será apresentado. */
 .Tcapa{
     color: var(--tipo_capa);
 }
 
+/* ? Determinado a autura da .valores */
 .valores{
     height: 30px;
 }
 
+/* ? Deixando a section .desconto em linha, para que todos os elementos fiquem um do lado do outro. */
 .desconto{
     display: flex;
     flex-direction: row ;
     
 }
 
+/* ? Determinando o tamanho da font das sections abaixo. */
 .por, .vreal{
     font-size: 11px;
 }
 
+/* ? O tamanho que a moeda é apresentado. */
 .moeda{
     font-size: 24px;
 }
 
+/* ? Tamanho da fonte e margin do .vcdesconto. */
 .vcdesconto{
     font-size: 24px;
     margin-left: 2.5px;
 }
 
+/* ? Como o footer vai ser apresentar e como ele vai se comportar. */
 footer{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -112,6 +130,7 @@ footer{
     align-items: center;
 }
 
+/* ? Como as section onde está armazenado os creditos de todos que colaborarão. */
 #desenvolvedor, #designer, #documentação{
     display: flex;
     flex-direction: column;
@@ -124,6 +143,7 @@ footer{
     /* background-color: blue; */
 }
 
+/* ? Como a ul que armazena os dados dos colaboradores estão armazenado e como ela irá colaborar. */
 #desenvolvedor, #designer, #documentação, ul{
     color: black;
     list-style: none;
@@ -137,10 +157,12 @@ footer{
     /* background-color: #6d6a6a3a; */
 }
 
+/* ? Deixa o nome dos colaboradores maior que os demais textos */
 #desenvolvedor, #designer, #documentação, ul, .nome{
     font-size: 10pt;
 }
 
+/* ? Modificando como os links são apresentados. */
 #desenvolvedor, #designer, #documentação, li, a{
     gap: 1;
     font-size: 8pt;
@@ -150,6 +172,8 @@ footer{
     flex-direction: row;
     align-items: center;
 }
+
+/* ? Tornando essa tela responsiva. */
 @media screen and (max-width: 1024px){
     body{
         overflow-x: hidden;

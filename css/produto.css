@@ -6,12 +6,6 @@
     --tipo_capa: #0993D8;
 }
 
-main{
-    /* width: 100vw; */
-    height: 6.25rem;
-    /* padding: .625rem; */
-}
-
 .disponibilidade{
     display: flex;
     justify-content: end;
