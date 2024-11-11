@@ -1,3 +1,4 @@
+/* ? Variaveis de cor para o site. */
 :root{
     --cor_de_fundo: #d7d7d785;
     --rascunho: #eaeaea;
@@ -6,19 +7,18 @@
     --tipo_capa: #0993D8;
 }
 
+/* ? Define onde firaca a disponibilidade do produto. */
 .disponibilidade{
     display: flex;
     justify-content: end;
     width: 100%;
 }
 
+/* ? Define o tamnho, cor e como os elementos dentro da section iram se comportar. */
 .produto{
-    /* width: 1810px; */
-    width: 99%;
-    /* height: 100%; */
     background-color: var(--cor_do_rodape);
-    margin: .625rem;
-    border-radius: 1.25rem;
+    margin: 10px;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -26,33 +26,38 @@
     padding: 20px;
 }
 
+/* ? Define o quanto arredondado será a borda da foto do produto. */
 .produto img{
-    border-radius: .3125rem;
-    width: 12.5rem;
-    height: 18.75rem;
+    border-radius: 5px;
+    width: 200px;
+    height: 300px;
 }
 
+/* ? Vai definir como os elementos dos informes vai se comportar e se alinhas dentro da section. */
 .informes{
     display: flex;
     flex-direction: row;
 }
 
+/* ? Define o tamanho da section onde ficara a sinopse e como o texto vai estar justificado. */
 .sonopse{
-    width: 31.25rem;
+    width: 500px;
     text-align: justify;
-    margin-left: .625rem;
+    margin-left: 10px;
 }
 
+/* ? Estilização do tamnanho da borda do hr */
 .sonopse hr{
-    margin: .625rem 0rem .625rem 0rem;
+    margin: 10px 0px 10px 0px;
 }
 
-
+/* ? Cor e tamanho da fonte dos nomes dos outores. */
 .autores{
     color: white;
-    font-size: .875rem;
+    font-size: 14px;
 }
 
+/* ? Estilização da section do botão, tamanho, como os elementos se portão dentro dele, e quanto de paddin tem entre a borda e os elementos internos */
 .button{
     width: 100%;
     display: flex;
@@ -61,45 +66,48 @@
     text-align: center;
     justify-content: end;
     /* background-color: black; */
-    padding: .625rem;
+    padding: 10px;
+    
 }
 
+/* ? Quanto de margin o p dentro do botão tem */
 .button p{
-    margin-right: 1.25rem;
+    margin-right: 20px;
 }
 
+/* ? Estilização do botão, cor, tamanho, altura, bordar, etc... */
 button{
-    background-color: rgba(189, 171, 171, 0.626);
-    width: 10rem;
-    height: 1.875rem;
-    border: .0625rem solid black;
-    box-shadow: .3125rem .3125rem .9375rem rgba(255, 255, 255, 0.758);
-    border-radius: 1.5625rem;
+    background-color: rgb(227, 207, 207);
+    width: 160px;
+    height: 30px;
+    border: 1px solid black;
+    box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.758);
+    border-radius: 25px;
 }
 
-@media screen and (max-width: 64rem){
+@media screen and (max-width: 1024px){
     body{
         overflow-x: hidden;
     }
 
     main{
-        height: calc(100vh + 6.25rem);
+        height: calc(100vh + 100px);
     }
 
     /* ?Estilizando a carra de pesquisa do carrinho */
     .pesquisa{
         /* ? Section que vai onde fica o input e a imagem da lupa */
-        padding: .3125rem;
-        border-radius: 1.5625rem;
-        width: 13.75rem;
-        height: 3.125rem;
+        padding: 5px;
+        border-radius: 25px;
+        width: 220px;
+        height: 50px;
         margin-left: 10;
         margin-right: 0;
     }
     
     .pes{
         /* ? Estilo do input */
-        width: 6.25rem;
+        width: 100px;
     }
     /* ? Estilo do carrinho */
     .carrinho{
@@ -107,9 +115,9 @@ button{
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 3.125rem;
-        height: 3.125rem;
-        margin: .3125rem;
+        width: 50px;
+        height: 50px;
+        margin: 5px;
     }
     
     /* ? Estilo do nome do site */
@@ -117,18 +125,21 @@ button{
         font-size: 12pt;
     }    
 
+    /* ? Muda a posição do topo */
     .topo{
         position: relative;
         z-index: 1;
     }
 
+    /* ? Define a forma que a disponibilidade do produto irá se comportar quando o site estiver responsivo. */
     .disponibilidade{
         display: flex;
         justify-content: start;
         width: 100%;
-        margin-bottom: .625rem;
+        margin-bottom: 10px;
     }
 
+    /* ? Define como as section a seguir iram se comportar e deixam os itens dispostos.*/
     .produto, .informes{
         display: flex;
         flex-direction: column;
@@ -137,25 +148,29 @@ button{
         align-items: center;
     }
 
+    /* ? Define o quanto aredondaodo e distante a imagem está dos outros enementos */
     .produto img{
-        border-radius: .625rem;
-        margin-left: .625rem;
+        border-radius: 10px;
+        margin-left: 10px;
     }
 
+    /* ? Define o tamnho e como o informe irá se comportar. */
     .informe{
         display: flex;
         flex-direction: column;
         align-items: start;
         text-align: start;
-        margin-top: .625rem;
-        margin-left: .3125rem;
+        margin-top: 10px;
+        margin-left: 5px;
         width: 100%;
     }
 
+    /* ? Define o tamanho da section. */
     .sonopse{
         width: 100%;
     }
 
+    /* ? Deixando os intens no centro. */
     .button{
         align-items: center;
     }

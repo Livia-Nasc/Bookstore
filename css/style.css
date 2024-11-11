@@ -17,6 +17,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+    text-align: left;
 }
 
 ::-webkit-scrollbar{
@@ -281,7 +282,7 @@ main .infor{
         font-size: 20px;
     }
  
-    /* ! Responsividade da apresetação. */
+    /* ? Responsividade da apresetação. */
     main .infor{
         display: flex;
         flex-direction: column;
@@ -292,7 +293,6 @@ main .infor{
 
     .infor2, .infor3{
         width: 350px;
-        /* height: 500px; */
         background-color: var(--cor_do_rodape);
         font-size: 14px;
         text-align: center;
@@ -304,16 +304,18 @@ main .infor{
         margin-bottom: 25px;
     }
 
+    /* ? Quando a classe .aparecerrr junto com menu, o menu-mobile se tornara visivel e animado para o usuário mobile */
     .menu-mobile.aparecerrr{
         visibility: visible;
         height: calc(100vh - 60px);
     }
    
-
+    /* ? Muda o display do botão. */
     .btn{
         display: block;
     }
 
+    /* ? Quando o menu-mobile for ativado, o .titulo irá sumir(ele está com position: absolute; então quando o menu mobile aperece o titulo continua aparecendo.) */
     .titulo.sumir{
         display: none;
         overflow: hidden;
