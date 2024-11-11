@@ -73,6 +73,7 @@ main{
     flex-direction: column;
     align-items: start;
     width: 100%;
+    text-align: left;
 }
 
 /* ? Modificando o tamanho da fonte dentro das sections a seguir. */
